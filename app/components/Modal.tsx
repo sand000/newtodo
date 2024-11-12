@@ -1,0 +1,26 @@
+import { addTodoTask } from '@/api';
+import { useRouter } from 'next/navigation';
+import {v4 as uuidv4} from "uuid"
+import React, { FormEventHandler, useState } from 'react'
+
+interface ModalProps {
+    modalOpen: boolean;
+    setModalOpen: (open: boolean) => boolean | void;
+    children:React.ReactNode;
+}
+
+const Modal: React.FC<ModalProps> = ({ modalOpen, setModalOpen, children }) => {
+    return (
+        <dialog id="my_modal_3" className={` modal ${modalOpen ? "modal-open" : ""}`}>
+            <div className="modal-box relative">
+
+                <button
+                    onClick={() => setModalOpen(false)}
+                    className="btn btn-sm btn-circle btn-ghost absolute right-2 top-2">✕</button>
+                {children}
+            </div>
+        </dialog>
+    )
+}
+
+export default Modal
