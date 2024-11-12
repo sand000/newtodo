@@ -6,6 +6,7 @@ import { MdDelete } from "react-icons/md";
 import Modal from './Modal';
 import { deleteTask, editTask } from '@/api';
 import { useRouter } from 'next/navigation';
+
 interface TaskProps {
   task: ITask
 }
