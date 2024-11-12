@@ -22,7 +22,6 @@ const router = useRouter()
       id: task.id,
       text: editedText
     })
-    console
     setMOdalEdit(false)
     router.refresh()
   }
